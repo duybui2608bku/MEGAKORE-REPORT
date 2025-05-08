@@ -57,7 +57,7 @@
             color: white;
             box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
             margin-bottom: 0.75rem;
-            height: 60px;
+            height: 35px;
             position: relative;
             overflow: hidden;
          }
@@ -84,7 +84,7 @@
          }
 
          .dashboard-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -106,7 +106,7 @@
          }
 
          .date-display {
-            font-size: 0.875rem;
+            font-size: 0.775rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -119,7 +119,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.875rem;
+            font-size: 0.775rem;
             background: rgba(255, 255, 255, 0.15);
             padding: 0.375rem 0.75rem;
             border-radius: 20px;
@@ -1604,16 +1604,21 @@
                   },
                   labels: {
                      style: {
-                        fontSize: "14px",
+                        fontSize: "15px",
                         fontWeight: "bold",
                      },
                   },
                },
                yaxis: {
                   max: 100,
+                  min: 0,
+                  tickAmount: 10,
                   labels: {
+                     formatter: function (val) {
+                        return val.toFixed(0) + " %";
+                     },
                      style: {
-                        fontSize: "10px",
+                        fontSize: "11px",
                      },
                   },
                },
